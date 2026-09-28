@@ -1,0 +1,24 @@
+ABDUL BAYES AHMADI
+Computer Science Graduate | Information Systems Manager | Web Developer | Instructor
+
+PROFILE
+Computer Science graduate with interests in web development, information systems, and teaching. I build responsive, practical web experiences with a focus on clear user journeys and maintainable implementation.
+
+CORE SKILLS
+HTML, CSS, JavaScript, React, Tailwind CSS, PHP, MySQL, Python, Git, GitHub, WordPress, Elementor, VS Code, Electron
+
+SELECTED PROJECTS
+• Faculty of Computer Science Website — dynamic PHP/MySQL website with responsive design and RTL support.
+• Barakat Al Sai Website — multilingual business platform with product management and online ordering integration.
+
+LANGUAGES
+Dari / Persian | Pashto | English
+
+CONTACT
+Location: Afghanistan
+Email: Replace with your preferred email address
+GitHub: Replace with your GitHub profile URL
+LinkedIn: Replace with your LinkedIn profile URL
+
+NOTE
+This editable CV starter is included with the portfolio. Update contact details, education dates, experience, certifications, project links, and accomplishments before sharing.
