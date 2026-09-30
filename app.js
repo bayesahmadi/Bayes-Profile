@@ -197,8 +197,8 @@ const translations = {
       ],
       [
         "03",
-        "Central Asian University",
-        "English academic document from Central Asian University.",
+        "University Of Central Asia",
+        "English academic document from University Of Central Asia.",
       ],
     ],
     services: [
@@ -247,7 +247,7 @@ const translations = {
       ["Education", "Computer Science"],
       ["Skills", "Web, systems & tools"],
       ["Experience", "Development & instruction"],
-      ["Certifications", "Add your credentials"],
+      ["Certifications", null, "certifications"],
       ["Languages", "Dari · Pashto · English"],
     ],
     contact:
@@ -427,7 +427,7 @@ const translations = {
       ["تحصیلات", "کمپیوتر ساینس"],
       ["مهارت‌ها", "وب، سیستم‌ها و ابزارها"],
       ["تجربه", "توسعه و تدریس"],
-      ["گواهی‌نامه‌ها", "مدارک خود را بیفزایید"],
+      ["گواهی‌نامه‌ها", null, "certifications"],
       ["زبان‌ها", "دری · پشتو · انگلیسی"],
     ],
     contact:
@@ -603,7 +603,7 @@ const translations = {
       ["زده‌کړه", "کمپیوټر ساینس"],
       ["مهارتونه", "وېب، سیسټمونه او وسایل"],
       ["تجربه", "پراختیا او ښوونه"],
-      ["تصدیقونه", "خپل اسناد ورزیات کړئ"],
+      ["تصدیقونه", null, "certifications"],
       ["ژبې", "دري · پښتو · انګلیسي"],
     ],
     contact:
@@ -690,10 +690,15 @@ function renderDynamicContent(t) {
     )
     .join("");
   byId("cv-points").innerHTML = t.cv
-    .map(
-      ([title, text]) =>
-        `<div class="cv-point"><span>${title}</span><p>${text}</p></div>`,
-    )
+    .map(([title, text, source]) => {
+      const value =
+        source === "certifications"
+          ? t.certifications
+              .map(([, certificationTitle]) => certificationTitle)
+              .join(" · ")
+          : text;
+      return `<div class="cv-point"><span>${title}</span><p>${value}</p></div>`;
+    })
     .join("");
   byId("contact-details").innerHTML = `<p>${t.contact}</p>
     <div class="contact-list">
