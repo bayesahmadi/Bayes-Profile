@@ -58,6 +58,7 @@ const translations = {
     navSkills: "Skills",
     navProjects: "Projects",
     navExperience: "Experience",
+    navCertifications: "Certifications",
     navServices: "Services",
     navContact: "Contact",
     available: "Available for selected projects",
@@ -88,6 +89,10 @@ const translations = {
     experienceTitle: "Learning, building, and sharing knowledge.",
     experienceIntro:
       "A multidisciplinary path across computer science, systems, web development, and education.",
+    certificationsEyebrow: "Academic documents",
+    certificationsTitle: "Education documented with care.",
+    certificationsIntro:
+      "Selected academic records that reflect my studies and continued learning.",
     servicesEyebrow: "How I can help",
     servicesTitle: "Practical digital services for ambitious ideas.",
     resumeEyebrow: "Resume",
@@ -179,6 +184,23 @@ const translations = {
         "Collaborating with clients to turn ideas into focused and useful web products.",
       ],
     ],
+    certifications: [
+      [
+        "01",
+        "Computer Science Diploma",
+        "University diploma in Computer Science.",
+      ],
+      [
+        "02",
+        "Academic Transcripts",
+        "Persian and English academic transcripts.",
+      ],
+      [
+        "03",
+        "Central Asian University",
+        "English academic document from Central Asian University.",
+      ],
+    ],
     services: [
       [
         "01",
@@ -244,6 +266,7 @@ const translations = {
     navSkills: "مهارت‌ها",
     navProjects: "پروژه‌ها",
     navExperience: "تجربه",
+    navCertifications: "مدارک تحصیلی",
     navServices: "خدمات",
     navContact: "تماس",
     available: "آماده همکاری در پروژه‌های منتخب",
@@ -274,6 +297,10 @@ const translations = {
     experienceTitle: "یادگیری، ساختن و اشتراک دانش.",
     experienceIntro:
       "مسیری چندجانبه در علوم کمپیوتر، سیستم‌ها، توسعه وب و آموزش.",
+    certificationsEyebrow: "مدارک تحصیلی",
+    certificationsTitle: "تحصیلات و اسناد علمی من.",
+    certificationsIntro:
+      "مجموعه‌ای از مدارک تحصیلی که مسیر آموزشی و یادگیری من را نشان می‌دهد.",
     servicesEyebrow: "چگونه کمک می‌کنم",
     servicesTitle: "خدمات دیجیتال کاربردی برای ایده‌های بلندپروازانه.",
     resumeEyebrow: "رزومه",
@@ -365,6 +392,15 @@ const translations = {
         "همکاری با مشتریان برای تبدیل ایده‌ها به محصولات وب متمرکز و مفید.",
       ],
     ],
+    certifications: [
+      ["۰۱", "دیپلوم کمپیوتر ساینس", "دیپلوم دانشگاهی در رشته کمپیوتر ساینس."],
+      [
+        "۰۲",
+        "ترانسکریپت‌های تحصیلی",
+        "ترانسکریپت‌های تحصیلی به زبان فارسی و انگلیسی.",
+      ],
+      ["۰۳", "دانشگاه آسیای مرکزی", "سند انگلیسی از دانشگاه آسیای مرکزی."],
+    ],
     services: [
       ["۰۱", "توسعه وب‌سایت", "وب‌سایت‌های شفاف و سریع، متناسب با هدف شما."],
       [
@@ -410,6 +446,7 @@ const translations = {
     navSkills: "مهارتونه",
     navProjects: "پروژې",
     navExperience: "تجربه",
+    navCertifications: "تحصیلي اسناد",
     navServices: "خدمتونه",
     navContact: "اړیکه",
     available: "د غوره پروژو لپاره چمتو یم",
@@ -440,6 +477,10 @@ const translations = {
     experienceTitle: "زده کړه، جوړونه او د پوهې شریکول.",
     experienceIntro:
       "په کمپیوټر ساینس، سیسټمونو، وېب پراختیا او زده‌کړه کې یو څو اړخیز مسیر.",
+    certificationsEyebrow: "تحصیلي اسناد",
+    certificationsTitle: "زما تحصیلي اسناد او زده‌کړه.",
+    certificationsIntro:
+      "هغه تحصیلي اسناد چې زما د زده‌کړې او مسلکي پرمختګ لاره څرګندوي.",
     servicesEyebrow: "څنګه مرسته کولی شم",
     servicesTitle: "د لوړو هیلو لرونکو نظرونو لپاره عملي ډیجیټل خدمتونه.",
     resumeEyebrow: "رزومه",
@@ -530,6 +571,15 @@ const translations = {
         "فریلانس پروژې",
         "له پیرودونکو سره د نظرونو په ګټورو او متمرکزو وېب محصولاتو بدلولو کې همکاري.",
       ],
+    ],
+    certifications: [
+      ["۰۱", "د کمپیوټر ساینس ډیپلوم", "په کمپیوټر ساینس کې د پوهنتون ډیپلوم."],
+      [
+        "۰۲",
+        "تحصیلي ټرانسکرېپټونه",
+        "په فارسي او انګلیسي ژبو تحصیلي ټرانسکرېپټونه.",
+      ],
+      ["۰۳", "د منځنۍ آسیا پوهنتون", "د منځنۍ آسیا پوهنتون انګلیسي سند."],
     ],
     services: [
       [
@@ -625,6 +675,12 @@ function renderDynamicContent(t) {
     .map(
       ([date, title, text]) =>
         `<article class="timeline-item reveal"><div class="timeline-content"><span class="timeline-date">${date}</span><h3>${title}</h3><p>${text}</p></div></article>`,
+    )
+    .join("");
+  byId("certifications-grid").innerHTML = t.certifications
+    .map(
+      ([number, title, text]) =>
+        `<article class="certification-card reveal"><span class="certification-number">${number}</span><div><h3>${title}</h3><p>${text}</p></div></article>`,
     )
     .join("");
   byId("services-grid").innerHTML = t.services
